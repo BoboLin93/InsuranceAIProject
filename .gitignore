@@ -1,0 +1,35 @@
+# Git 忽略文件
+
+# --- Python 相關 ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.ipynb_checkpoints/ # Jupyter Notebooks 的檢查點文件
+.vscode/            # VS Code 的配置資料夾 (可選擇性忽略，如果包含個人配置)
+
+# --- 數據檔案 ---
+data/               # 忽略整個 data 資料夾
+*.csv               # 如果有其他 csv 檔案散落在其他地方也忽略
+*.json
+*.parquet
+*.pkl               # Python pickle 序列化檔案 (常用於保存模型)
+*.h5                # Keras/TensorFlow 模型檔案
+*.bin               # 其他二進制模型檔案
+
+# --- 日誌檔案 ---
+*.log
+logs/
+
+# --- 部署和 MLOps 相關 ---
+mlruns/             # MLflow 追蹤檔案的預設資料夾 (非常重要，通常不應提交)
+*.db                # SQLite 數據庫文件 (如您的專案可能會有 local.db)
+
+# --- 操作系統或編輯器生成的臨時文件 ---
+.DS_Store           # macOS 特有的資料夾設置文件
+*.bak
+*~
